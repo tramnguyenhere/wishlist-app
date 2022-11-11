@@ -1,0 +1,11 @@
+@import '../../assets/styles/global.scss';
+
+.nav__wrapper {
+    display: flex;
+    justify-content:flex-end;
+
+   .list__item {
+    font-family: $--theme-font;
+    color: $--theme-color-champagne;
+   }
+}

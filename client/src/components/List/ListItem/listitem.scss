@@ -1,0 +1,42 @@
+@import '../../../assets/styles/global.scss';
+
+.list-item__wrapper {
+    padding: 10px;
+
+    .list-item {
+        padding-left: 10px;
+        display: flex;
+        align-items:center;
+        width: 100%;
+
+        .dot {
+            color: $--theme-color-middle_green_yellow;
+            font-size: 21px; 
+            position: absolute;
+            left: 20px;
+        }
+    
+        .list-item__name {
+            padding-left: 20px;
+            padding-right: 30px;
+            font-family: $--theme-font;
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+            width: 100%;
+
+        }
+
+        .gift {
+            color: $--theme-color-watermelon_red;
+            font-size: 21px;
+            position: absolute;
+            right: 20px;
+        }
+    }
+
+    hr {
+        border: 2px solid $--theme-color-deep_mose_green;
+        margin: 0;
+    }
+}

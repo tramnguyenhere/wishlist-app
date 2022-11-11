@@ -1,0 +1,48 @@
+@import '../../assets/styles/global.scss';
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $--theme-font;
+    color: $--theme-color-champagne;
+    width: 400px;
+
+    
+    .title-owner_name {
+        font-size: 30px;   
+    }
+
+    .title-app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title-app_name {
+            position: relative;
+            font-size: 40px;
+            line-height: 50px;
+
+            &::before {
+                position: absolute;
+                content: ' ';
+                width: 40px;
+                border: 1px solid $--theme-color-champagne;
+                top: 50%;
+                left: -20%;
+            }   
+            &::after {
+                position: absolute;
+                content: ' ';
+                width: 40px;
+                border: 1px solid $--theme-color-champagne;
+                top: 50%;
+                right: -20%;
+            }   
+        }
+        .title-app_version {
+            font-size: 30px;
+            line-height: 25px;
+}
+    }
+}
