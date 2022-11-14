@@ -4,16 +4,14 @@ import './listitem.scss';
 
 import Card from 'react-bootstrap/Card';
 
-const ListItem = () => {
+const ListItem = ({ icon, item }) => {
   return (
     <Card.Body className='list-item__wrapper'>
       <div className='list-item'>
         <i className='fa-solid fa-circle dot'></i>
-        <Card.Link className='list-item__name'>
-          Casio collection LTP-V001GL
-        </Card.Link>
+        <Card.Link className='list-item__name'>{item}</Card.Link>
         <Card.Link className='gift'>
-          <i className='fa-solid fa-gift '></i>
+          <i className={icon}></i>
         </Card.Link>
       </div>
       <hr />

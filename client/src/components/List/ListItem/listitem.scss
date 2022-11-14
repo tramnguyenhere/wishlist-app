@@ -33,11 +33,13 @@
             position: absolute;
             right: 20px;
         }
-    }
 
+    }
     hr {
         background-color: $--theme-color-deep_mose_green;
-        border: 1px solid $--theme-color-deep_mose_green;
+        border: 2px solid $--theme-color-deep_mose_green;
         margin: 0;
+        width: 100%;
     }
+
 }

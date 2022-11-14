@@ -4,14 +4,13 @@ import Card from 'react-bootstrap/Card';
 import './list.scss';
 import ListItem from './ListItem/ListItem';
 
-const List = () => {
+const List = ({ icon, item }) => {
   return (
     <Card className='list'>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      <ListItem icon={icon} item={item} />
+      <ListItem icon={icon} item={item} />
+      <ListItem icon={icon} item={item} />
+      <ListItem icon={icon} item={item} />
     </Card>
   );
 };

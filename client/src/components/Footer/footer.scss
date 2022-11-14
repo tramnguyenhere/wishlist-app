@@ -1,0 +1,17 @@
+@import '../../assets/styles/global.scss';
+
+.footer {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: $--theme-font;
+    font-size: 20px;
+    color: $--theme-color-champagne;
+    text-align: center;
+}

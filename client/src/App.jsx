@@ -1,14 +1,25 @@
 import React from 'react';
 
-import Container from 'react-bootstrap/Container';
+import { Container, Col, Row } from 'react-bootstrap';
+import Footer from './components/Footer/Footer';
+
 import NavigationBar from './components/NavigationBar/NavigationBar';
-import Home from './pages/Home/Home';
+import Title from './components/Title/Title';
+// import Home from './pages/Home/Home';
+import UserHome from './pages/UserHome/UserHome';
 
 const App = () => {
   return (
     <Container>
       <NavigationBar />
-      <Home />
+      <Row>
+        <Col>
+          <Title />
+        </Col>
+      </Row>
+      {/* <Home /> */}
+      <UserHome />
+      <Footer />
     </Container>
   );
 };
