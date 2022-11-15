@@ -9,7 +9,7 @@ const UserHome = () => {
   return (
     <Container className='user_home'>
       <Row>
-        <InputGroup className='user_hom__input'>
+        <InputGroup className='user_home__input'>
           <InputGroup.Text id='new_item'>
             <Form.Control
               id='input--add-new'
@@ -17,7 +17,7 @@ const UserHome = () => {
               aria-label='Make a wish...'
               type='text'
             />
-            <Button id='button--add-new'>Add</Button>
+            <Button id='button--add-new'>ADD</Button>
           </InputGroup.Text>
         </InputGroup>
       </Row>

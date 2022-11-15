@@ -1,0 +1,38 @@
+@import '../../assets/styles/global.scss';
+
+.login {
+    margin-top: 50px !important;
+    width: 350px;
+    background-color: $--theme-color-champagne;
+    margin: auto;
+    border-radius: 20px;
+    padding: 20px 30px;
+    font-family: $--theme-font;
+    
+    
+    h1 {
+        text-align: center;
+        color: $--theme-color-watermelon_red;
+    }
+
+    .login__form-group {
+        .login__form-label {
+            font-size: 20px;
+            color: $--theme-color-deep_mose_green;
+
+        }
+        .login__form-input {
+            border-radius: 20px;
+            background: #fff;
+        }
+    }
+
+    .login__form-button{
+        background-color: $--theme-color-deep_mose_green;
+        border: none;
+        padding: 7px 30px;
+        border-radius: 20px;
+        width: 100%;
+        margin: 10px 0px;
+    }
+}

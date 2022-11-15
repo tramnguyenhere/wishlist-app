@@ -4,12 +4,10 @@
     margin-top: 50px;
     width: 400px;
 
-    .user_hom__input {
+    .user_home__input {
         padding: 0;
         margin-bottom: 10px;
         
-        
-
         #new_item {
             width: 100%;
             border: 0;
@@ -28,6 +26,7 @@
                 color: $--theme-color-champagne;
                 border: 1px solid $--theme-color-deep_mose_green;
                 border-radius: 0px 5px 5px 0px;
+                font-family: $--theme-font;
             }
         }
     }

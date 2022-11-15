@@ -13,3 +13,10 @@ body {
   box-sizing: border-box;
   position: relative;
 }
+
+.card__wrapper {
+background-color: $--theme-color-champagne;
+max-width: 800px;
+border-radius: 20px;
+margin-top: 30px;
+}
