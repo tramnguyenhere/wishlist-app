@@ -3,9 +3,14 @@ import React from 'react';
 import './btn.scss';
 import { Button } from 'react-bootstrap';
 
-const Btn = ({ name, className, type, onClick }) => {
+const Btn = ({ name, className, type, onClick, id }) => {
   return (
-    <Button className={`btn ${className}`} type={type} onClick={onClick}>
+    <Button
+      className={`btn ${className}`}
+      id={id}
+      type={type}
+      onClick={onClick}
+    >
       {name}
     </Button>
   );

@@ -3,14 +3,72 @@
 
 .item-card__wrapper {
     font-family: $--theme-font;
+    padding: 20px;
+    width: 600px;
 
-    .item-photo__frame {
-    width: 320px;
-    height: 320px;
-    background-color: #fff;
+    .item-photo__wrapper {
+        display: flex;
+        align-items: center;
+        padding-right: 0;
+        
+        .item-photo__frame {
+            background-color: #fff;
+            border-radius: 20px;
+
+            img {
+                border-radius: 20px;
+                max-height: 320px;
+                max-width: 320px;
+            }
+        }
     }
 
-    h1 {
-        font-size: 40px;
+    .item-detail__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        padding: 20px;
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+
+        }
+    
+        .btn__wrapper {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 240px;
+
+            #btn--item-place, #btn--item-delivery, #btn--item-confirmation {
+             margin-top: 10px;
+             width: 100%;
+             border-radius: 20px;
+             font-size: 20px;
+             padding: 10px;
+             color: $--theme-color-champagne;
+             border: none;
+            }
+
+            #btn--item-place {
+                background-color: $--theme-color-palm_leaf;
+            }
+
+
+            #btn--item-delivery {
+                background-color: $--theme-color-deep_mose_green;
+
+            }
+
+            #btn--item-confirmation {
+                background-color: $--theme-color-watermelon_red;
+
+            }
+    
+        }
     }
+
 }
