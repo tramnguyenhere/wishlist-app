@@ -4,3 +4,26 @@
     box-sizing: border-box;
     width: fit-content;
 }
+
+.btn--exit {
+    background-color: $--theme-color-watermelon_red;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+    display: flex;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        font-size: 25px;
+    }
+
+}

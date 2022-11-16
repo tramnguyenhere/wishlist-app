@@ -5,11 +5,9 @@ import { Button } from 'react-bootstrap';
 
 const Btn = ({ name, className, type, onClick }) => {
   return (
-    <div>
-      <Button className={`btn ${className}`} type={type} onClick={onClick}>
-        {name}
-      </Button>
-    </div>
+    <Button className={`btn ${className}`} type={type} onClick={onClick}>
+      {name}
+    </Button>
   );
 };
 

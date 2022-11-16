@@ -1,0 +1,16 @@
+@import '../../assets/styles/global.scss';
+
+
+.item-card__wrapper {
+    font-family: $--theme-font;
+
+    .item-photo__frame {
+    width: 320px;
+    height: 320px;
+    background-color: #fff;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
