@@ -11,15 +11,12 @@ const ItemForm = () => {
       <Btn className='btn--exit' name={<i class='fa-solid fa-xmark'></i>} />
       <Form className='item-form__wrapper'>
         <Form.Label className='item-form__header'>ADD YOUR WISH</Form.Label>
-        <InputGroup className='item-form__input'>
-          <Form.Label className='item-form__input--title'>
-            Name of item
+        <Form.Group>
+          {' '}
+          <Form.Label className='item-form__name-current'>
+            Casio collection LTP-V001GL
           </Form.Label>
-          <Form.Control
-            className='item-form__input--upload'
-            placeholder='Type the item here'
-          />
-        </InputGroup>
+        </Form.Group>
         <InputGroup className='item-form__input'>
           <Form.Label className='item-form__input--title'>
             Photo of item

@@ -16,6 +16,13 @@
             color: $--theme-color-watermelon_red;
         }
 
+        .item-form__name-current {
+            color: $--theme-color-deep_mose_green;
+            text-align: center;
+            width: 100%;
+            font-size: 25px;
+        }
+
         .item-form__input {
             margin-bottom: 10px;
             display: flex;
