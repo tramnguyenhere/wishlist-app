@@ -4,6 +4,7 @@ import './itemdetail.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Btn from '../Button/Btn';
+import PopUp from '../PopUp/PopUp';
 
 const ItemDetails = () => {
   return (
@@ -27,6 +28,12 @@ const ItemDetails = () => {
           </Row>
         </Col>
       </Row>
+      {/* <Row className='item-detail__popup'>
+        <PopUp
+          noti='If you want to the send me the gift by post, please text me via social media or email for the address 😁'
+          classname='item-detail__noti'
+        />
+      </Row> */}
     </Container>
   );
 };

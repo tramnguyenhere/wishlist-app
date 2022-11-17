@@ -1,10 +1,11 @@
 @import '../../assets/styles/global.scss';
 
-
 .item-card__wrapper {
     font-family: $--theme-font;
     padding: 20px;
     width: 600px;
+    margin-top: 30px;
+   
 
     .item-photo__wrapper {
         display: flex;
