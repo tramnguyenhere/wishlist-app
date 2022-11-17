@@ -25,5 +25,21 @@
     i {
         font-size: 25px;
     }
+}
 
+.btn--save, .btn--delete {
+    border-radius: 20px;
+    border: none ;
+    padding: 10px 30px;
+    color: $--theme-color-champagne
+}
+
+.btn--save {
+    background-color: $--theme-color-deep_mose_green;
+ 
+}
+
+.btn--delete {
+    background-color: $--theme-color-watermelon_red;
+   margin-left: 10px;
 }

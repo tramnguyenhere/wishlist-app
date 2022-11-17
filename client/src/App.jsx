@@ -2,10 +2,11 @@ import React from 'react';
 
 import { Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer/Footer';
-import ItemDetails from './components/ItemDetails/ItemDetails';
-
+import ItemForm from './components/ItemForm/ItemForm';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Title from './components/Title/Title';
+
+// import Details from './pages/Details/Details';
 // import Guideline from './pages/Guideline/Guideline';
 // import Login from './pages/Login/Login';
 // import Home from './pages/Home/Home';
@@ -22,7 +23,8 @@ const App = () => {
       {/* <UserHome /> */}
       {/* <Login /> */}
       {/* <Guideline /> */}
-      <ItemDetails />
+      {/* <Details /> */}
+      <ItemForm />
       <Footer />
     </Container>
   );

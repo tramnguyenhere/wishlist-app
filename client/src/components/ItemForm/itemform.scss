@@ -1,0 +1,39 @@
+@import '../../assets/styles/global.scss';
+
+.item-form {
+    display: flex;
+    justify-content: center;
+    font-family: $--theme-font;
+    width: 400px;
+
+    .item-form__wrapper {
+        margin: 20px;
+       
+        .item-form__header {
+            width: 100%;
+            text-align: center;
+            font-size: 40px;
+            color: $--theme-color-watermelon_red;
+        }
+
+        .item-form__input {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+           
+
+            .item-form__input--title {
+                color: $--theme-color-deep_mose_green;
+            }
+    
+            .item-form__input--upload {
+                width: 100%;
+            }
+        }
+            .btn--group {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+    }
+}
