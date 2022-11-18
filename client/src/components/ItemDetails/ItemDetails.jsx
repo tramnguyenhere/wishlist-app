@@ -4,12 +4,17 @@ import './itemdetail.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Btn from '../Button/Btn';
-import PopUp from '../PopUp/PopUp';
+import { useNavigate } from 'react-router-dom';
 
 const ItemDetails = () => {
+  const navigate = useNavigate();
   return (
     <Container className='card__wrapper item-card__wrapper'>
-      <Btn className='btn--exit' name={<i class='fa-solid fa-xmark'></i>} />
+      <Btn
+        onClick={() => navigate('/home')}
+        className='btn--exit'
+        name={<i class='fa-solid fa-xmark'></i>}
+      />
       <Row>
         <Col xs={6} md={6} lg={6} className='item-photo__wrapper'>
           <span className='item-photo__frame'>

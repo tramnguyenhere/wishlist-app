@@ -8,7 +8,7 @@ import Btn from '../Button/Btn';
 const ItemForm = () => {
   return (
     <Container className='card__wrapper item-form'>
-      <Btn className='btn--exit' name={<i class='fa-solid fa-xmark'></i>} />
+      <Btn className='btn--exit' name={<i className='fa-solid fa-xmark'></i>} />
       <Form className='item-form__wrapper'>
         <Form.Label className='item-form__header'>ADD YOUR WISH</Form.Label>
         <Form.Group>

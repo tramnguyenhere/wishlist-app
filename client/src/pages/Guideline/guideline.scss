@@ -12,17 +12,22 @@
         color: $--theme-color-watermelon_red;
     }
 
-    p {
+    p, ul {
         font-size: 20px;
         line-height: 25px;
         margin-top: 10px;
         text-align: justify;
-
     }
-
+    
     .guideline--warning {
         color: $--theme-color-deep_mose_green;
+        
+        a {
+            color: $--theme-color-watermelon_red;
+            text-decoration: none;
+        }
     }
+
 
     
 }

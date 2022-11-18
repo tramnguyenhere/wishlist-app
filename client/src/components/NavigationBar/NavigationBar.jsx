@@ -14,7 +14,10 @@ function NavigationBar() {
       <Nav.Link className='list__item' href='/login'>
         LOGIN
       </Nav.Link>
-      <Nav.Link className='list__item' href='/contact'>
+      <Nav.Link
+        className='list__item'
+        href='mailto:tramngoc1402@gmail.com?Subject=About%20your%20wishlist%21'
+      >
         CONTACT ME
       </Nav.Link>
     </Nav>
