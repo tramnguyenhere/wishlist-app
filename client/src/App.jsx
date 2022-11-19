@@ -22,11 +22,12 @@ const App = () => {
           <Title />
         </Row>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path={`/`} element={<Home />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/wishes' element={<Home />} />
           <Route path='/instruction' element={<Guideline />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/item/1' element={<Details />} />
+          <Route path='/wishes/:id' element={<Details />} />
         </Routes>
         <Footer />
       </Container>
