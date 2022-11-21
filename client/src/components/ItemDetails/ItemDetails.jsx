@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Btn from '../Button/Btn';
 import { useNavigate } from 'react-router-dom';
 
-const ItemDetails = () => {
+const ItemDetails = ({ setToggle, toggle }) => {
   const navigate = useNavigate();
   return (
     <Container className='card__wrapper item-card__wrapper'>
@@ -28,7 +28,13 @@ const ItemDetails = () => {
           <h1>Casio collection LTP-V001GL</h1>
           <Row className='btn__wrapper'>
             <Btn id='btn--item-place' name='where to buy?' />
-            <Btn id='btn--item-delivery' name='how to send it to you?' />
+            <Btn
+              id='btn--item-delivery'
+              name='how to send it to you?'
+              onClick={() => {
+                setToggle(!toggle);
+              }}
+            />
             <Btn id='btn--item-confirmation' name='I had bought it for you!' />
           </Row>
         </Col>
