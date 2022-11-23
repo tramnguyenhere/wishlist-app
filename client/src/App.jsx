@@ -23,7 +23,6 @@ const App = () => {
         </Row>
         <Routes>
           <Route path={`/`} element={<Home />} />
-          <Route path='/home' element={<Home />} />
           <Route path='/wishes' element={<Home />} />
           <Route path='/instruction' element={<Guideline />} />
           <Route path='/login' element={<Login />} />

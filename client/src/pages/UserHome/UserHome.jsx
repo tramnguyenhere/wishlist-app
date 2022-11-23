@@ -22,10 +22,7 @@ const UserHome = () => {
         </InputGroup>
       </Row>
       <Row>
-        <List
-          icon='fa-solid fa-pen-to-square'
-          item='Casio collection LTP-V001GL'
-        />
+        <List icon='fa-solid fa-pen-to-square' />
       </Row>
     </Container>
   );

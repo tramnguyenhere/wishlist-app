@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Container className='home'>
       <Row>
-        <List icon='fa-solid fa-gift' item='Casio collection LTP-V001GL' />
+        <List icon='fa-solid fa-gift' />
       </Row>
     </Container>
   );
