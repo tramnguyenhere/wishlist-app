@@ -10,7 +10,7 @@ const Guideline = () => {
   return (
     <Container className='card__wrapper guideline'>
       <Btn
-        onClick={() => navigate('/home')}
+        onClick={() => navigate('/')}
         className='btn--exit'
         name={<i className='fa-solid fa-xmark'></i>}
       />

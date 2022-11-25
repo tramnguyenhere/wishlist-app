@@ -4,17 +4,21 @@ const app = express();
 
 app.use(express.json());
 
+const cors = require('cors');
+
+app.use(cors());
+
 let wishlist = [
   {
     id: '156ce4a4-e88e-4111-826f-9bf5d324a386',
-    name: 'LADIES BLACK DIAL TRADITIONAL GOLD PLATED CASIO WATCH',
+    name: 'Ladies Casio watch',
     whereToBuy: 'https://amzn.eu/d/6IY5J5G',
     available: true,
     imageUrl: 'https://m.media-amazon.com/images/I/71MF2vtiGYL._AC_UY879_.jpg',
   },
   {
     id: 'ab70baf0-20ef-4ebe-a938-9d9efcb712d4',
-    name: 'Sony WH-1000XM5 Wireless Bluetooth Noise Canceling Headphones',
+    name: 'Sony WH-1000XM5 Headphones',
     whereToBuy: 'https://amzn.eu/d/96XJBAK',
     available: true,
     imageUrl: 'https://m.media-amazon.com/images/I/61fxPWFu6aL._AC_SY450_.jpg',
@@ -69,6 +73,6 @@ const unknownEndpoint = (request, response) => {
 
 app.use(unknownEndpoint);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 console.log(`Server running on port ${PORT}`);

@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 const Details = () => {
   const [toggle, setToggle] = useState(false);
   const { id } = useParams();
-  console.log(id);
   return (
     <Container>
       <ItemDetails itemId={id} setToggle={setToggle} toggle={toggle} />

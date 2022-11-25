@@ -5,7 +5,7 @@ import './navigationbar.scss';
 function NavigationBar() {
   return (
     <Nav className='nav__wrapper'>
-      <Nav.Link className='list__item' href='/home'>
+      <Nav.Link className='list__item' href='/'>
         HOMEPAGE
       </Nav.Link>
       <Nav.Link className='list__item' href='/instruction'>

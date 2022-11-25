@@ -1,15 +1,17 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Card from 'react-bootstrap/Card';
 
 import './list.scss';
 import ListItem from './ListItem/ListItem';
 
 const List = ({ icon }) => {
-  const wishlist = useSelector((state) => state.wishlist.wishlistItems);
+  const data = useSelector((state) => state.wishlist.data);
+
+  console.log(data);
   return (
     <Card className='list'>
-      {wishlist.map((item) => (
+      {data?.map((item) => (
         <ListItem id={item.id} key={item.id} icon={icon} item={item.name} />
       ))}
     </Card>
