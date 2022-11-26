@@ -1,5 +1,5 @@
 const express = require('express');
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 const app = express();
 
 app.use(express.json());
@@ -27,6 +27,7 @@ let wishlist = [
 
 app.get('/api/wishlist', (req, res) => {
   res.json(wishlist);
+  console.log(wishlist);
 });
 
 app.get('/api/wishlist/:id', (req, res) => {
@@ -37,19 +38,18 @@ app.get('/api/wishlist/:id', (req, res) => {
 
 app.post('/api/wishlist', (req, res) => {
   const body = req.body;
-
-  if (!body.name) {
+  if (!body.item) {
     return response.status(400).json({
       error: 'item missing',
     });
   }
 
   const wishItem = {
-    name: body.name,
+    name: body.item,
     whereToBuy: body.whereToBuy,
     available: true,
     imageUrl: body.imageUrl,
-    id: uuid.v4(),
+    id: uuidv4(),
   };
 
   wishlist = wishlist.concat(wishItem);

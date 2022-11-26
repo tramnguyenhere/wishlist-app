@@ -1,13 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import wishlistService from '../../services/wishlist';
-
-const wishListData =
-  (localStorage.getItem('wishlistData') || '{}') === '{}'
-    ? []
-    : JSON.parse(localStorage.getItem('wishlistData'));
-
 const initialState = {
-  data: wishListData,
+  data: [],
 };
 
 export const wishlistSlice = createSlice({
@@ -15,8 +9,13 @@ export const wishlistSlice = createSlice({
   initialState,
   reducers: {
     setWishlist: (state, action) => {
-      console.log(action.payload);
       state.data = action.payload;
+    },
+    createWishItem: (state, action) => {
+      const item = action.payload;
+      state.data.push({
+        item,
+      });
     },
     changeAvailableStatus: (state, action) => {
       const toUpdateItem = action.payload;
@@ -26,6 +25,7 @@ export const wishlistSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setWishlist, changeAvailableStatus } = wishlistSlice.actions;
+export const { setWishlist, createWishItem, changeAvailableStatus } =
+  wishlistSlice.actions;
 
 export default wishlistSlice.reducer;

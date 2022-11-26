@@ -23,8 +23,9 @@ const ItemForm = () => {
           </Form.Label>
           <Form.Control
             className='item-form__input--upload'
-            type='file'
+            type='text'
             id='item-photo'
+            placeholder='Paste the link of image address'
           />
         </InputGroup>
         <InputGroup className='item-form__input'>

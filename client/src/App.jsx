@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import wishlistService from './services/wishlist';
 import { Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer/Footer';
-// import ItemForm from './components/ItemForm/ItemForm';
+import ItemForm from './components/ItemForm/ItemForm';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Title from './components/Title/Title';
 
@@ -12,9 +12,19 @@ import Details from './pages/Details/Details';
 import Guideline from './pages/Guideline/Guideline';
 import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
-// import UserHome from './pages/UserHome/UserHome';
+import { useDispatch } from 'react-redux';
+import { setWishlist } from './redux/features/wishlistSlice';
+import UserHome from './pages/UserHome/UserHome';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    wishlistService
+      .getAll()
+      .then((wishlist) => dispatch(setWishlist(wishlist)));
+  }, [dispatch]);
+
   return (
     <Router>
       <Container>
@@ -27,6 +37,8 @@ const App = () => {
           <Route path='/instruction' element={<Guideline />} />
           <Route path='/login' element={<Login />} />
           <Route path='/wishes/:id' element={<Details />} />
+          <Route path='/user/wishes/:id' element={<ItemForm />} />
+          <Route path='/user/homepage' element={<UserHome />} />
         </Routes>
         <Footer />
       </Container>

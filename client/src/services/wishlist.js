@@ -8,6 +8,12 @@ const getAll = async () => {
   return response.data;
 };
 
+const createNew = async (item) => {
+  const newItem = { item, available: true, id: item.id };
+  const response = await axios.post(baseUrl, newItem);
+  return response.data;
+};
+
 const update = (changedObject) => {
   const request = axios.patch(`${baseUrl}/${changedObject.id}`, {
     available: false,
@@ -16,4 +22,4 @@ const update = (changedObject) => {
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, update };
+export default { getAll, createNew, update };
