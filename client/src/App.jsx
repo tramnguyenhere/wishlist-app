@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { setWishlist } from './redux/features/wishlistSlice';
 
+import wishlistService from './services/wishlist';
 import { Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer/Footer';
 // import ItemForm from './components/ItemForm/ItemForm';
@@ -16,22 +14,7 @@ import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 // import UserHome from './pages/UserHome/UserHome';
 
-const baseUrl = 'http://localhost:5000/api/wishlist';
-
 const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => {
-        dispatch(setWishlist(response.data));
-      })
-      .catch((er) => {
-        console.log(er);
-      });
-  }, [dispatch]);
-
   return (
     <Router>
       <Container>

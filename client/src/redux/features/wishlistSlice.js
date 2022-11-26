@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import wishlistService from '../../services/wishlist';
 
 const wishListData =
   (localStorage.getItem('wishlistData') || '{}') === '{}'
@@ -14,12 +15,12 @@ export const wishlistSlice = createSlice({
   initialState,
   reducers: {
     setWishlist: (state, action) => {
+      console.log(action.payload);
       state.data = action.payload;
-
-      localStorage.setItem('wishlistData', JSON.stringify(state.data));
     },
     changeAvailableStatus: (state, action) => {
-      state.data[0].available = false;
+      const toUpdateItem = action.payload;
+      wishlistService.update(toUpdateItem);
     },
   },
 });

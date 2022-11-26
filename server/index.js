@@ -57,6 +57,16 @@ app.post('/api/wishlist', (req, res) => {
   res.json(wishItem);
 });
 
+app.patch('/api/wishlist/:id', (req, res) => {
+  const itemId = req.params.id;
+
+  const toAdjustWishItem = wishlist.find((item) => item.id === itemId);
+  console.log(toAdjustWishItem);
+  toAdjustWishItem.available = req.body.available;
+
+  res.json(toAdjustWishItem);
+});
+
 const requestLogger = (request, response, next) => {
   console.log('Method:', request.method);
   console.log('Path:  ', request.path);

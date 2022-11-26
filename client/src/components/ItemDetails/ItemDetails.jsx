@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import { setWishlist } from '../../redux/features/wishlistSlice';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { changeAvailableStatus } from '../../redux/features/wishlistSlice';
@@ -9,7 +8,6 @@ import './itemdetail.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Btn from '../Button/Btn';
-import { useEffect } from 'react';
 
 const ItemDetails = ({ setToggle, toggle, itemId }) => {
   const navigate = useNavigate();
@@ -54,7 +52,7 @@ const ItemDetails = ({ setToggle, toggle, itemId }) => {
                   id='btn--item-confirmation'
                   name='I had bought it for you!'
                   onClick={() => {
-                    dispatch(changeAvailableStatus(id));
+                    dispatch(changeAvailableStatus(selectedWishItem));
                   }}
                 />
               ) : (
