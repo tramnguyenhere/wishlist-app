@@ -48,14 +48,20 @@ const ItemDetails = ({ setToggle, toggle, itemId }) => {
                   setToggle(!toggle);
                 }}
               />
-              <Btn
-                disabled={!available}
-                id='btn--item-confirmation'
-                name='I had bought it for you!'
-                onClick={() => {
-                  dispatch(changeAvailableStatus(id));
-                }}
-              />
+
+              {available ? (
+                <Btn
+                  id='btn--item-confirmation'
+                  name='I had bought it for you!'
+                  onClick={() => {
+                    dispatch(changeAvailableStatus(id));
+                  }}
+                />
+              ) : (
+                <span className='item__no-available'>
+                  This item has been granted.
+                </span>
+              )}
             </Row>
           </Col>
         </Row>

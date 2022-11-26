@@ -66,8 +66,15 @@
                 background-color: $--theme-color-watermelon_red;
     
             }
+
+            .item__no-available {
+                text-align: center;
+                padding-top: 10px;
+                color: $--theme-color-watermelon_red;
+            }
     
         }
+
     }
 }
 
