@@ -13,14 +13,13 @@ const UserHome = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const addWishItem = async (event) => {
+  const addWishItem = (event) => {
     event.preventDefault();
     const item = event.target.wishItem.value;
-    const newWishItem = await wishlistService.createNew(item);
-    dispatch(createWishItem(newWishItem));
+    wishlistService
+      .createNew(item)
+      .then((response) => dispatch(createWishItem(response)));
   };
-
-  useEffect(() => {}, []);
 
   return (
     <Container className='user_home'>
