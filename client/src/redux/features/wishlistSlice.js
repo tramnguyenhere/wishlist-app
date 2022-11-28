@@ -13,9 +13,7 @@ export const wishlistSlice = createSlice({
     },
     createWishItem: (state, action) => {
       const item = action.payload;
-      state.data.push({
-        item,
-      });
+      state.data.push(item);
     },
     updateItemDetails: (state, action) => {
       const toUpdateItem = action.payload;
