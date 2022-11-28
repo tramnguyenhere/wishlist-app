@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { setWishlist } from '../redux/features/wishlistSlice';
 const baseUrl = 'http://localhost:5000/api/wishlist';
 
 const getAll = async () => {
@@ -16,7 +14,9 @@ const createNew = async (item) => {
 
 const update = (changedObject) => {
   const request = axios.patch(`${baseUrl}/${changedObject.id}`, {
-    available: false,
+    available: changedObject.available,
+    whereToBuy: changedObject.whereToBuy,
+    imageUrl: changedObject.imageUrl,
   });
   return request.then((response) => response.data);
 };

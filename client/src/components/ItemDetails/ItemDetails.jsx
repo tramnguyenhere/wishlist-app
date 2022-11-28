@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { changeAvailableStatus } from '../../redux/features/wishlistSlice';
+import { updateItemDetails } from '../../redux/features/wishlistSlice';
 
 import './itemdetail.scss';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -52,7 +52,7 @@ const ItemDetails = ({ setToggle, toggle, itemId }) => {
                   id='btn--item-confirmation'
                   name='I had bought it for you!'
                   onClick={() => {
-                    dispatch(changeAvailableStatus(selectedWishItem));
+                    dispatch(updateItemDetails(selectedWishItem));
                   }}
                 />
               ) : (

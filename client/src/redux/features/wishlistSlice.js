@@ -17,7 +17,7 @@ export const wishlistSlice = createSlice({
         item,
       });
     },
-    changeAvailableStatus: (state, action) => {
+    updateItemDetails: (state, action) => {
       const toUpdateItem = action.payload;
       wishlistService.update(toUpdateItem);
     },
@@ -25,7 +25,7 @@ export const wishlistSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setWishlist, createWishItem, changeAvailableStatus } =
+export const { setWishlist, createWishItem, updateItemDetails } =
   wishlistSlice.actions;
 
 export default wishlistSlice.reducer;

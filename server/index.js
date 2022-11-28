@@ -27,7 +27,6 @@ let wishlist = [
 
 app.get('/api/wishlist', (req, res) => {
   res.json(wishlist);
-  console.log(wishlist);
 });
 
 app.get('/api/wishlist/:id', (req, res) => {
@@ -61,8 +60,10 @@ app.patch('/api/wishlist/:id', (req, res) => {
   const itemId = req.params.id;
 
   const toAdjustWishItem = wishlist.find((item) => item.id === itemId);
-  console.log(toAdjustWishItem);
+
   toAdjustWishItem.available = req.body.available;
+  toAdjustWishItem.whereToBuy = req.body.whereToBuy;
+  toAdjustWishItem.imageUrl = req.body.imageUrl;
 
   res.json(toAdjustWishItem);
 });
