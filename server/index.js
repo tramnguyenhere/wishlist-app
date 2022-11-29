@@ -68,6 +68,16 @@ app.patch('/api/wishlist/:id', (req, res) => {
   res.json(toAdjustWishItem);
 });
 
+app.delete('/api/wishlist/:id', (req, res) => {
+  try {
+    const itemId = req.params.id;
+    wishlist = wishlist.filter((item) => item.id !== itemId);
+    res.status(204).end();
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const requestLogger = (request, response, next) => {
   console.log('Method:', request.method);
   console.log('Path:  ', request.path);

@@ -21,5 +21,10 @@ const update = (changedObject) => {
   return request.then((response) => response.data);
 };
 
+const remove = async (id) => {
+  const response = await axios.delete(`${baseUrl}/${id}`);
+  return response.data;
+};
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, createNew, update };
+export default { getAll, createNew, update, remove };

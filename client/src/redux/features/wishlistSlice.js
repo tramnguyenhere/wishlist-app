@@ -19,11 +19,16 @@ export const wishlistSlice = createSlice({
       const toUpdateItem = action.payload;
       wishlistService.update(toUpdateItem);
     },
+    removeItem: (state, action) => {
+      const itemId = action.payload;
+      state.data = state.data.filter((item) => item.id !== itemId);
+      wishlistService.remove(itemId);
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setWishlist, createWishItem, updateItemDetails } =
+export const { setWishlist, createWishItem, updateItemDetails, removeItem } =
   wishlistSlice.actions;
 
 export default wishlistSlice.reducer;

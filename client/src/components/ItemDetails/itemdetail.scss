@@ -7,11 +7,15 @@
     max-width: fit-content;
    
 .item__wrapper {
+    display: flex;
     justify-content: space-around;
+    flex-direction: row;
+    width: 500px;
+    
     .item-photo__wrapper {
         display: flex;
         align-items: center;
-        width: fit-content;
+        max-width: fit-content;
        
         .item-photo__frame {
             background-color: #fff;
@@ -20,6 +24,7 @@
             
             img {
                 max-height: 300px;
+                max-width: 200px;
                 border-radius: 20px;
             }
         }

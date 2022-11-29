@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import './userhome.scss';
 import { Button, Container, Form, InputGroup, Row } from 'react-bootstrap';

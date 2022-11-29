@@ -1,30 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './itemform.scss';
 import { Container, Form, InputGroup, Row } from 'react-bootstrap';
 
 import Btn from '../Button/Btn';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import wishlistService from '../../services/wishlist';
+import { useNavigate, useParams } from 'react-router-dom';
+import {
+  removeItem,
+  updateItemDetails,
+} from '../../redux/features/wishlistSlice';
+
 const ItemForm = () => {
+  const [photoItem, setPhotoItem] = useState('');
+  const [whereToBuy, setWhereToBuy] = useState('');
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const itemId = useParams().id;
   const wishItems = useSelector((state) => state.wishlist.data);
   const selectedWishItem = wishItems.find((item) => item.id === itemId);
 
   const updateItem = (event) => {
-    event.preventDefault();
-    const photoItem = event.target.photoItem.value;
-    const addressItem = event.target.addressItem.value;
-    const toUpdateItem = wishlistService.update({
-      id: itemId,
-      available: selectedWishItem.available,
-      imageUrl: photoItem || '',
-      whereToBuy: addressItem,
-    });
-    console.log(toUpdateItem);
-    dispatch(updateItem(toUpdateItem));
+    try {
+      dispatch(
+        updateItemDetails({
+          id: itemId,
+          available: selectedWishItem.available,
+          imageUrl: photoItem || '',
+          whereToBuy: whereToBuy || '',
+        })
+      );
+      navigate('/user/homepage');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteItem = (id) => {
+    try {
+      dispatch(removeItem(id));
+      navigate('/user/homepage');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -46,7 +66,8 @@ const ItemForm = () => {
             type='text'
             id='item-photo'
             placeholder='Paste the link of image address'
-            name='photoItem'
+            value={photoItem}
+            onChange={(e) => setPhotoItem(e.target.value)}
           />
         </InputGroup>
         <InputGroup className='item-form__input'>
@@ -56,12 +77,18 @@ const ItemForm = () => {
           <Form.Control
             className='item-form__input--upload'
             placeholder='Paste the link address or online shop'
-            name='addressItem'
+            value={whereToBuy}
+            onChange={(e) => setWhereToBuy(e.target.value)}
           />
         </InputGroup>
         <Row className='btn--group'>
           <Btn name='SAVE' className='btn--save' type='submit' />
-          <Btn name='DELETE' className='btn--delete' />
+          <Btn
+            name='DELETE'
+            className='btn--delete'
+            type='button'
+            onClick={() => deleteItem(itemId)}
+          />
         </Row>
       </Form>
     </Container>
