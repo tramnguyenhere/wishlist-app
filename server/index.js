@@ -1,32 +1,21 @@
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
+const cors = require('cors');
 const app = express();
+require('dotenv').config();
+const WishItem = require('./model/wishItem.js');
 
 app.use(express.json());
-
-const cors = require('cors');
-
 app.use(cors());
 
-let wishlist = [
-  {
-    id: '156ce4a4-e88e-4111-826f-9bf5d324a386',
-    name: 'Ladies Casio watch',
-    whereToBuy: 'https://amzn.eu/d/6IY5J5G',
-    available: true,
-    imageUrl: 'https://m.media-amazon.com/images/I/71MF2vtiGYL._AC_UY879_.jpg',
-  },
-  {
-    id: 'ab70baf0-20ef-4ebe-a938-9d9efcb712d4',
-    name: 'Sony WH-1000XM5 Headphones',
-    whereToBuy: 'https://amzn.eu/d/96XJBAK',
-    available: true,
-    imageUrl: 'https://m.media-amazon.com/images/I/61fxPWFu6aL._AC_SY450_.jpg',
-  },
-];
-
-app.get('/api/wishlist', (req, res) => {
-  res.json(wishlist);
+app.get('/api/wishlist', (req, res, next) => {
+  WishItem.find({})
+    .then((wishlist) => {
+      res.json(wishlist);
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 app.get('/api/wishlist/:id', (req, res) => {
@@ -35,7 +24,7 @@ app.get('/api/wishlist/:id', (req, res) => {
   res.json(wishItem);
 });
 
-app.post('/api/wishlist', (req, res) => {
+app.post('/api/wishlist', (req, res, next) => {
   const body = req.body;
   if (!body.item) {
     return response.status(400).json({
@@ -43,39 +32,48 @@ app.post('/api/wishlist', (req, res) => {
     });
   }
 
-  const wishItem = {
+  const wishItem = new WishItem({
     name: body.item,
     whereToBuy: body.whereToBuy,
     available: true,
     imageUrl: body.imageUrl,
-    id: uuidv4(),
-  };
+  });
 
-  wishlist = wishlist.concat(wishItem);
-
-  res.json(wishItem);
+  wishItem
+    .save()
+    .then((savedWishItem) => {
+      res.json(savedWishItem);
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 app.patch('/api/wishlist/:id', (req, res) => {
   const itemId = req.params.id;
+  const body = req.body;
 
-  const toAdjustWishItem = wishlist.find((item) => item.id === itemId);
+  const toBeAdjustedWishItem = {
+    available: body.available,
+    whereToBuy: body.whereToBuy,
+    imageUrl: body.imageUrl,
+  };
 
-  toAdjustWishItem.available = req.body.available;
-  toAdjustWishItem.whereToBuy = req.body.whereToBuy;
-  toAdjustWishItem.imageUrl = req.body.imageUrl;
-
-  res.json(toAdjustWishItem);
+  WishItem.findByIdAndUpdate(itemId, toBeAdjustedWishItem)
+    .then((updatedWishItem) => {
+      res.json(updatedWishItem);
+    })
+    .catch((error) => next(error));
 });
 
-app.delete('/api/wishlist/:id', (req, res) => {
-  try {
-    const itemId = req.params.id;
-    wishlist = wishlist.filter((item) => item.id !== itemId);
-    res.status(204).end();
-  } catch (error) {
-    console.log(error);
-  }
+app.delete('/api/wishlist/:id', (req, res, next) => {
+  WishItem.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.status(204).end();
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 const requestLogger = (request, response, next) => {
