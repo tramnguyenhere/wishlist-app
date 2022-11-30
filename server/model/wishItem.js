@@ -1,16 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
-
-const url = process.env.MONGODB_URI;
-
-console.log('connected to', url);
-
-mongoose
-  .connect(url)
-  .then(() => {
-    console.log('connected to MongoDB');
-  })
-  .catch((error) => console.log('error connecting to MongoDB', error.message));
 
 const wishItemSchema = new mongoose.Schema({
   id: String,

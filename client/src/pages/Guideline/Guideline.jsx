@@ -39,13 +39,13 @@ const Guideline = () => {
           wouldn’t be bought by others
         </li>
       </ul>
-      <p className='guideline--warning'>
+      {/* <p className='guideline--warning'>
         In the current time, the login function is only available for Tram
         Nguyen, if you want to have your own version of the list, please{' '}
         <a href='mailto:tramngoc1402@gmail.com?Subject=About%20your%20wishlist%21'>
           contact her ♡
         </a>
-      </p>
+      </p> */}
     </Container>
   );
 };

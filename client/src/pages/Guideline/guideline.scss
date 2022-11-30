@@ -1,19 +1,19 @@
 @import '../../assets/styles/global.scss';
 
 .guideline {
-    font-size: 14px;
+    font-size: 12px;
     padding: 30px 30px 20px 30px;
     font-family: $--theme-font;
     position: relative;
      
 
     h3 {
-        font-size: 20px;
+        font-size: 18px;
         color: $--theme-color-watermelon_red;
     }
 
     p, ul {
-        font-size: 20px;
+        font-size: 14px;
         line-height: 25px;
         margin-top: 10px;
         text-align: justify;

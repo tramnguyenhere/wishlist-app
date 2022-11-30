@@ -40,8 +40,10 @@ const ItemForm = () => {
 
   const deleteItem = (id) => {
     try {
-      dispatch(removeItem(id));
-      navigate('/user/homepage');
+      if (window.confirm('Delete this wish?')) {
+        dispatch(removeItem(id));
+        navigate('/user/homepage');
+      }
     } catch (error) {
       console.log(error);
     }
