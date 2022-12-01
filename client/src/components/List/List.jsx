@@ -17,7 +17,6 @@ const List = ({ icon, onClick, user }) => {
           icon={icon}
           item={item.name}
           onClick={onClick}
-          user={user}
         />
       ))}
     </Card>

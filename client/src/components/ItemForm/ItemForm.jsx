@@ -32,7 +32,7 @@ const ItemForm = () => {
           whereToBuy: whereToBuy || '',
         })
       );
-      navigate('/user/homepage');
+      navigate('/');
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +42,7 @@ const ItemForm = () => {
     try {
       if (window.confirm('Delete this wish?')) {
         dispatch(removeItem(id));
-        navigate('/user/homepage');
+        navigate('/');
       }
     } catch (error) {
       console.log(error);
@@ -51,7 +51,11 @@ const ItemForm = () => {
 
   return (
     <Container className='card__wrapper item-form'>
-      <Btn className='btn--exit' name={<i className='fa-solid fa-xmark'></i>} />
+      <Btn
+        className='btn--exit'
+        name={<i className='fa-solid fa-xmark'></i>}
+        onClick={() => navigate('/')}
+      />
       <Form className='item-form__wrapper' onSubmit={updateItem}>
         <Form.Label className='item-form__header'>ADD YOUR WISH</Form.Label>
         <Form.Group>

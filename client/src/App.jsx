@@ -14,7 +14,6 @@ import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import { useDispatch } from 'react-redux';
 import { setWishlist } from './redux/features/wishlistSlice';
-import UserHome from './pages/UserHome/UserHome';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -37,8 +36,6 @@ const App = () => {
           <Route path='/instruction' element={<Guideline />} />
           <Route path='/login' element={<Login />} />
           <Route path='/wishes/:id' element={<Details />} />
-          <Route path='/user/wishes/:id' element={<ItemForm />} />
-          <Route path='/user/homepage' element={<UserHome />} />
         </Routes>
         <Footer />
       </Container>

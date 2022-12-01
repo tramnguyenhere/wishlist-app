@@ -4,3 +4,37 @@
     margin-top: 50px;
     width: 400px;
 }
+
+
+.user_home {
+    margin-top: 50px;
+    width: 400px;
+
+    .user_home__input {
+        padding: 0;
+        margin-bottom: 10px;
+        
+        #new_item {
+            width: 100%;
+            border: 0;
+            padding: 0;
+            background-color: transparent;
+
+            #input--add-new {
+                background-color: $--theme-color-champagne;
+                border: 1px solid $--theme-color-champagne;
+                border-radius: 5px 0px 0px 5px;
+                font-family: $--theme-font;
+            }
+
+            #button--add-new {
+                background-color: $--theme-color-deep_mose_green;
+                color: $--theme-color-champagne;
+                border: 1px solid $--theme-color-deep_mose_green;
+                border-radius: 0px 5px 5px 0px;
+                font-family: $--theme-font;
+            }
+        }
+    }
+
+}
