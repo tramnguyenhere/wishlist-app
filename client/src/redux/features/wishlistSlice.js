@@ -17,6 +17,10 @@ export const wishlistSlice = createSlice({
     },
     updateItemDetails: (state, action) => {
       const toUpdateItem = action.payload;
+      const toUpdateItemIndex = state.data.indexOf(
+        (item) => item.id === action.payload.id
+      );
+      state.data = state.data.splice(toUpdateItemIndex, 1, toUpdateItem);
       wishlistService.update(toUpdateItem);
     },
     removeItem: (state, action) => {

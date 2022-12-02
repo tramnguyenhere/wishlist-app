@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import wishlistService from './services/wishlist';
 import { Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer/Footer';
-import ItemForm from './components/ItemForm/ItemForm';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import Title from './components/Title/Title';
 

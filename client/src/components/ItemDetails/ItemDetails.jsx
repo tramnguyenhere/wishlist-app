@@ -15,6 +15,12 @@ const ItemDetails = ({ setToggle, toggle, itemId }) => {
   const wishItems = useSelector((state) => state.wishlist.data);
 
   const selectedWishItem = wishItems.find((item) => item.id === itemId);
+  console.log(selectedWishItem);
+
+  const itemStatusHandler = (e) => {
+    e.preventDefault();
+    dispatch(updateItemDetails({ ...selectedWishItem, available: false }));
+  };
 
   if (!selectedWishItem) {
     navigate('/');
@@ -51,9 +57,7 @@ const ItemDetails = ({ setToggle, toggle, itemId }) => {
                 <Btn
                   id='btn--item-confirmation'
                   name='I had bought it for you!'
-                  onClick={() => {
-                    dispatch(updateItemDetails(selectedWishItem));
-                  }}
+                  onClick={itemStatusHandler}
                 />
               ) : (
                 <span className='item__no-available'>

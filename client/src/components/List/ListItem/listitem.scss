@@ -24,7 +24,10 @@
             color: #000;
             font-size: 20px;
             width: 100%;
+        }
 
+        .list-item__name--not-available {
+            text-decoration: line-through;
         }
 
         .gift {

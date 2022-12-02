@@ -15,13 +15,16 @@ export const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
-
       localStorage.setItem('user', JSON.stringify(state.user));
+    },
+    removeUser: (state, action) => {
+      state.user = undefined;
+      localStorage.removeItem('user');
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser } = userSlice.actions;
+export const { setUser, removeUser } = userSlice.actions;
 
 export default userSlice.reducer;

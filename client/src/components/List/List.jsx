@@ -16,6 +16,7 @@ const List = ({ icon, onClick, user }) => {
           key={item.id}
           icon={icon}
           item={item.name}
+          status={item.available}
           onClick={onClick}
         />
       ))}
