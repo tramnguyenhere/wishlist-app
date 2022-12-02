@@ -4,6 +4,17 @@ Each e-commerce platform has its own version of wishlist; therefore, to gather a
 
 ## Image
 
+### Homepage
+<img width="441" alt="Screenshot 2022-12-02 at 20 30 25" src="https://user-images.githubusercontent.com/57455557/205361455-a85d5c38-ced6-4a48-a4c7-6a746e28eb7e.png"> <br />
+### Item details 
+<img width="444" alt="Screenshot 2022-12-02 at 20 30 37" src="https://user-images.githubusercontent.com/57455557/205361495-bcf6e37a-e6f1-400f-bf52-3c66659dc716.png"> <br />
+### Wish form
+<img width="430" alt="Screenshot 2022-12-02 at 20 28 38" src="https://user-images.githubusercontent.com/57455557/205361167-d57fa2e0-8ef0-434d-b808-364e00715cff.png"> <br />
+### Wish edit 
+<img width="446" alt="Screenshot 2022-12-02 at 20 33 23" src="https://user-images.githubusercontent.com/57455557/205362275-6e296397-ce3e-477e-a713-9882f2ebc070.png"> <br />
+### Login page
+<img width="471" alt="Screenshot 2022-12-02 at 20 32 31" src="https://user-images.githubusercontent.com/57455557/205361821-2d6bdc3f-5d4c-44c4-8e2e-877ca3dc0310.png"> <br />
+
 ## How to run the demo application
 
 ### Install NodeJs and npm
